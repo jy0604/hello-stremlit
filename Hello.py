@@ -12,8 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import matplotlib.pyplot as plt
+import streamlit as st
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
 df = pd.read_csv('/Users/jing/Downloads/toy_dataset.csv')
 df.head()
 
