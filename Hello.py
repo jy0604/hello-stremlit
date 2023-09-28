@@ -65,4 +65,12 @@ plt.show()
 # Display the plot for the other gender in Streamlit
 st.pyplot(fig2)
 
+#comments
+st.write("There are some findings")
+
+fig = plt.figure()
+plt.pie(gen_med['count'], labels = gen_med['City'])
+
+# show plot
+plt.show()
 
