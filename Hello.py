@@ -56,6 +56,12 @@ ax2.set_ylabel("Average Income")
 ax2.set_title(f"Average Income for {other_gender} in Each City")
 ax2.legend()
 
+fig = plt.figure()
+plt.pie(gen_med['count'], labels = gen_med['City'])
+
+# show plot
+plt.show()
+
 # Display the plot for the other gender in Streamlit
 st.pyplot(fig2)
 
