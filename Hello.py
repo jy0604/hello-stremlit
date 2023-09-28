@@ -66,7 +66,12 @@ plt.show()
 st.pyplot(fig2)
 
 #comments
-st.write("There are some findings")
+st.write("There are some findings and a brief analysis ")
+st.write("1.The highest average income belongs to "mountain View" and the lowest average income belongs to "Dallas" ")
+st.write("2.Gender does not affect the overall trend in average income ")
+st.write("3.the average income of "Austin" is close to "Boston" ")
+
+
 
 fig = plt.figure()
 plt.pie(gen_med['count'], labels = gen_med['City'])
