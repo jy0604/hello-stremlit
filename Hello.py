@@ -19,7 +19,7 @@ st.dataframe(df)
 # Add some space between the charts
 st.write("")
 
-# Add an interactive element (slider)
+# Part2.Add an interactive element (slider)
 st.set_option('deprecation.showPyplotGlobalUse', False)
 selected_variable = st.selectbox("2.Select a Variable for Analysis", df.columns)
 
@@ -38,7 +38,7 @@ st.pyplot()
 # Add some space between the charts
 st.write("")
 
-# Select a gender to display (using a sidebar)
+# Part3: Select a gender to display (using a sidebar)
 selected_gender = st.sidebar.selectbox("Select Gender", gen_med['Gender'].unique())
 
 # Filter data for the selected gender
@@ -98,7 +98,7 @@ st.write('1.The highest average income belongs to "Mountain View" and the lowest
 st.write('2.Gender does not affect the overall trend in average income.')
 st.write('3.The average income of "Austin" is close to "Boston". ')
 
-# Add some space between the charts
+# Part4: Add some space between the charts
 st.write("")
 
 st.write("4.Here is a Pie Chart:")
@@ -108,3 +108,6 @@ plt.pie(gen_med['count'], labels=gen_med['City'], autopct='%1.1f%%')
 plt.title("Income Distribution by City")
 st.pyplot(fig3)
 
+#comments
+st.write("Observations from Pie Chart：")
+st.write('There are significant differences in income between genders across cities.')
