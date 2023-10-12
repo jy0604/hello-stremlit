@@ -13,7 +13,7 @@ gen_med = df.groupby(['City', 'Gender'])['Income'].mean().reset_index(name='coun
 st.title("Some interesting data about toy")
 
 # display the data 
-st.write("Here is a display of the toy dataframe:")
+st.write("1.Here is a display of the toy dataframe:")
 st.dataframe(df)
 
 # Add some space between the charts
@@ -21,7 +21,7 @@ st.write("")
 
 # Add an interactive element (slider)
 st.set_option('deprecation.showPyplotGlobalUse', False)
-selected_variable = st.selectbox("Select a Variable for Analysis", df.columns)
+selected_variable = st.selectbox("2.Select a Variable for Analysis", df.columns)
 
 # Display a description of the selected variable
 st.write(f"Description of {selected_variable}:")
@@ -60,6 +60,7 @@ ax.set_ylabel("Average Income")
 ax.set_title(f"Average Income for {selected_gender} in Each City")
 ax.legend()
 
+st.write("3.Here is a histogram:")
 # Display the plot in Streamlit
 st.pyplot(fig)
 
@@ -100,6 +101,7 @@ st.write('3.The average income of "Austin" is close to "Boston". ')
 # Add some space between the charts
 st.write("")
 
+st.write("4.Here is a Pie Chart:")
 # Pie chart to show the distribution of data by city
 fig3 = plt.figure(figsize=(10, 5))
 plt.pie(gen_med['count'], labels=gen_med['City'], autopct='%1.1f%%')
