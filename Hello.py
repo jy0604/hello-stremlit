@@ -12,6 +12,10 @@ gen_med = df.groupby(['City', 'Gender'])['Income'].mean().reset_index(name='coun
 # Create a Streamlit app
 st.title("Some interesting data about toy")
 
+# display the data 
+st.write("Here is a display of the toy dataframe:")
+print(df)
+
 # Select a gender to display (using a sidebar)
 selected_gender = st.sidebar.selectbox("Select Gender", gen_med['Gender'].unique())
 
