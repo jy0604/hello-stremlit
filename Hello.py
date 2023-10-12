@@ -43,7 +43,7 @@ other_data = gen_med[gen_med['Gender'] == other_gender]
 
 # Create a separate bar plot for the other gender
 fig2, ax2 = plt.subplots(figsize=(10, 5))
-x_pos2 = np.arange(len(other_data)
+x_pos2 = np.arange(len(other_data))
 
 # Plot the data
 ax2.bar(x_pos2, other_data['count'], width=0.4, label=other_gender, color='orange')
