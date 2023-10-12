@@ -73,10 +73,10 @@ plt.show()
 st.pyplot(fig2)
 
 #comments
-st.write("There are some Observations from bar graph ")
+st.write("There are some Observations from bar graph.")
 st.write('1.The highest average income belongs to "Mountain View" and the lowest average income belongs to "Dallas"')
 st.write('2.Gender does not affect the overall trend in average income.')
-st.write('3.The average income of "Austin" is close to "Boston" ')
+st.write('3.The average income of "Austin" is close to "Boston". ')
 
 # Add some space between the charts
 st.write("")
