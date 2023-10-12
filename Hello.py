@@ -10,7 +10,7 @@ df = pd.read_csv('toy_dataset.csv')
 gen_med = df.groupby(['City', 'Gender'])['Income'].mean().reset_index(name='count')
 
 # Create a Streamlit app
-st.title("Average Income Per City by Gender")
+st.title("Some interesting data about toy")
 
 # Create a sidebar with interactive elements
 selected_gender = st.sidebar.selectbox("Select Gender", gen_med['Gender'].unique())
