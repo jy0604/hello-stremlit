@@ -19,6 +19,21 @@ st.dataframe(df)
 # Add some space between the charts
 st.write("")
 
+# Add an interactive element (slider)
+selected_variable = st.selectbox("Select a Variable for Analysis", df.columns)
+
+# Display a description of the selected variable
+st.write(f"Description of {selected_variable}:")
+st.write(df[selected_variable].describe())
+
+# Create a histogram of the selected variable
+st.write(f"Histogram of {selected_variable}:")
+plt.hist(df[selected_variable], bins=20)
+st.pyplot()
+
+# Add some space between the charts
+st.write("")
+
 # Select a gender to display (using a sidebar)
 selected_gender = st.sidebar.selectbox("Select Gender", gen_med['Gender'].unique())
 
