@@ -12,11 +12,6 @@ gen_med = df.groupby(['City', 'Gender'])['Income'].mean().reset_index(name='coun
 # Create a Streamlit app
 st.title("Average Income Per City by Gender")
 
-# Create a radio button to select gender inside the main content area
-selected_gender = st.radio("Select Gender", ('Male', 'Female'))
-
-# Filter data for the selected gender
-filtered_data = gen_med[gen_med['Gender'] == selected_gender]
 
 # Create a bar plot for the selected gender
 fig, ax = plt.subplots(figsize=(10, 5))
