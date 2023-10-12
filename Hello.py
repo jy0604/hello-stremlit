@@ -73,10 +73,13 @@ plt.show()
 st.pyplot(fig2)
 
 #comments
-st.write("There are some findings and a brief analysis ")
+st.write("There are some Observations and a brief analysis ")
 st.write('1. The highest average income belongs to "Mountain View" and the lowest average income belongs to "Dallas"')
 st.write('2.Gender does not affect the overall trend in average income ')
 st.write('3.the average income of "Austin" is close to "Boston" ')
+
+# Add some space between the charts
+st.write("")
 
 # Pie chart to show the distribution of data by city
 fig3 = plt.figure(figsize=(10, 5))
