@@ -26,9 +26,12 @@ selected_variable = st.selectbox("Select a Variable for Analysis", df.columns)
 st.write(f"Description of {selected_variable}:")
 st.write(df[selected_variable].describe())
 
-# Create a histogram of the selected variable
+# Add a slider to select the number of bins for the histogram
+num_bins = st.slider("Select the Number of Bins for the Histogram", min_value=5, max_value=50, value=20)
+
+# Create a histogram of the selected variable with the specified number of bins
 st.write(f"Histogram of {selected_variable}:")
-plt.hist(df[selected_variable], bins=20)
+plt.hist(df[selected_variable], bins=num_bins)
 st.pyplot()
 
 # Add some space between the charts
