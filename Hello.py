@@ -12,9 +12,6 @@ gen_med = df.groupby(['City', 'Gender'])['Income'].mean().reset_index(name='coun
 # Create a Streamlit app
 st.title("Average Income Per City by Gender")
 
-# Filter data for the selected gender
-filtered_data = gen_med[gen_med['Gender'] == selected_gender]
-
 # Create a bar plot for both genders combined
 fig, ax = plt.subplots(figsize=(10, 5))
 x_pos = np.arange(len(filtered_data))
