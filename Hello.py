@@ -16,6 +16,9 @@ st.title("Some interesting data about toy")
 st.write("Here is a display of the toy dataframe:")
 st.dataframe(df)
 
+# Add some space between the charts
+st.write("")
+
 # Select a gender to display (using a sidebar)
 selected_gender = st.sidebar.selectbox("Select Gender", gen_med['Gender'].unique())
 
