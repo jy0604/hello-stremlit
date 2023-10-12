@@ -37,6 +37,7 @@ st.pyplot()
 
 # Add some space between the charts
 st.write("")
+st.write("")
 
 # Part3: Select a gender to display (using a sidebar)
 selected_gender = st.sidebar.selectbox("Select Gender", gen_med['Gender'].unique())
