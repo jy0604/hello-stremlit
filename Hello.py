@@ -20,6 +20,7 @@ st.dataframe(df)
 st.write("")
 
 # Add an interactive element (slider)
+st.set_option('deprecation.showPyplotGlobalUse', False)
 selected_variable = st.selectbox("Select a Variable for Analysis", df.columns)
 
 # Display a description of the selected variable
