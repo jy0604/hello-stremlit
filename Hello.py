@@ -10,8 +10,13 @@ df = pd.read_csv('toy_dataset.csv')
 gen_med = df.groupby(['City', 'Gender'])['Income'].mean().reset_index(name='count')
 
 # Create a Streamlit app
-st.title("Average Income Per City by Gender")
+st.title("Some interesting data about toy")
 
+# Select a gender to display (using a sidebar)
+selected_gender = st.sidebar.selectbox("Select Gender", gen_med['Gender'].unique())
+
+# Filter data for the selected gender
+filtered_data = gen_med[gen_med['Gender'] == selected_gender]
 
 # Create a bar plot for the selected gender
 fig, ax = plt.subplots(figsize=(10, 5))
@@ -51,11 +56,24 @@ ax2.set_ylabel("Average Income")
 ax2.set_title(f"Average Income for {other_gender} in Each City")
 ax2.legend()
 
+fig = plt.figure()
+plt.pie(gen_med['count'], labels = gen_med['City'])
+
+# show plot
+plt.show()
+
 # Display the plot for the other gender in Streamlit
 st.pyplot(fig2)
+
+#comments
+st.write("There are some findings and a brief analysis ")
+st.write('1. The highest average income belongs to "Mountain View" and the lowest average income belongs to "Dallas"')
+st.write('2.Gender does not affect the overall trend in average income ')
+st.write('3.the average income of "Austin" is close to "Boston" ')
 
 # Pie chart to show the distribution of data by city
 fig3 = plt.figure(figsize=(10, 5))
 plt.pie(gen_med['count'], labels=gen_med['City'], autopct='%1.1f%%')
 plt.title("Income Distribution by City")
 st.pyplot(fig3)
+
