@@ -10,17 +10,15 @@ df = pd.read_csv('toy_dataset.csv')
 gen_med = df.groupby(['City', 'Gender'])['Income'].mean().reset_index(name='count')
 
 # Create a Streamlit app
-st.title("Some interesting data about toy")
+st.title("Average Income Per City by Gender")
 
-# Select a gender to display (using a sidebar)
-selected_gender = st.sidebar.selectbox("Select Gender", gen_med['Gender'].unique())
+# Create a sidebar with interactive elements
+selected_gender = st.sidebar.radio("Select Gender", ('Male', 'Female'))
 
 # Filter data for the selected gender
 filtered_data = gen_med[gen_med['Gender'] == selected_gender]
 
 # Create a bar plot for the selected gender
-st.write(f"### Average Income for {selected_gender} in Each City")
-
 fig, ax = plt.subplots(figsize=(10, 5))
 x_pos = np.arange(len(filtered_data))
 tick_labels = filtered_data['City']
@@ -44,8 +42,6 @@ other_gender = 'Female' if selected_gender == 'Male' else 'Male'
 other_data = gen_med[gen_med['Gender'] == other_gender]
 
 # Create a separate bar plot for the other gender
-st.write(f"### Average Income for {other_gender} in Each City")
-
 fig2, ax2 = plt.subplots(figsize=(10, 5))
 x_pos2 = np.arange(len(other_data)
 
@@ -63,10 +59,8 @@ ax2.legend()
 # Display the plot for the other gender in Streamlit
 st.pyplot(fig2)
 
-# Pie chart
-st.write(f"### Pie Chart: Average Income Distribution in All Cities")
-fig = plt.figure()
-plt.pie(gen_med['count'], labels=gen_med['City'], autopct='%1.1f%%', startangle=140)
-
-# Display the pie chart in Streamlit
-st.pyplot(fig)
+# Pie chart to show the distribution of data by city
+fig3 = plt.figure(figsize=(10, 5))
+plt.pie(gen_med['count'], labels=gen_med['City'], autopct='%1.1f%%')
+plt.title("Income Distribution by City")
+st.pyplot(fig3)
